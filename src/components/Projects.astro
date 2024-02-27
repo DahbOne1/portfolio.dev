@@ -1,0 +1,62 @@
+---
+import JavaScriptIcon from "./icons/JavaScript.astro";
+import CSSIcon from "./icons/CSS.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+
+
+const TAGS = {
+    JAVASCRIPT:{
+        name: "JavaScript",
+        class: "bg-sky-100/20 text-white",
+        icon: JavaScriptIcon,
+    },
+    HTML:{
+        name: "HTML",
+        class: "bg-sky-100/20 text-white",
+        icon: HTMLIcon,
+    },
+    CSS:{
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: CSSIcon,
+    },
+    TAILWIND:{
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: TailwindIcon,
+    }
+}
+
+const PROJECTS = [
+    {
+        title: "projecto 11",
+        description: "dskjcdsac",
+        link: "12",
+        github: "asdcc",
+        image: 'ksjdjsad',
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND],
+    }
+]
+---
+
+{
+    PROJECTS.map(project => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>    
+            <p class="text-lg mb-4 text-pretty">{project.description}</p>
+            <ul class="flex gap-x-4 flex-row">
+                {project.tags.map((tag) =>(
+                    <li>
+                        <span class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-4`}>
+                            <tag.icon></tag.icon> {tag.name}    
+                        </span>
+                        
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-xl shadow-white/10 mt-4" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+        </article>
+    ))
+
+}

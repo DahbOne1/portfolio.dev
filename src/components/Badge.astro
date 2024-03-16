@@ -1,4 +1,15 @@
-<span class="ml-4 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+---
+   // const {href} = Astro.props    
+---
 
-    <slot></slot>
-</span>
+<div class="mt-4">
+    <a class="relative inline-block overflow-hidden rounded-md p-[1px] hover:scale-105 transition">
+        <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]">
+        </span>
+        <div class="inliner-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+            <slot></slot>
+        </div>
+    
+    </a>
+
+</div>

@@ -3,7 +3,12 @@ import JavaScriptIcon from "./icons/JavaScript.astro";
 import CSSIcon from "./icons/CSS.astro";
 import HTMLIcon from "./icons/HTML.astro";
 import TailwindIcon from "./icons/Tailwind.astro";
-
+import LinkButton from "./LinkButton.astro";
+import Github from "./icons/Github.astro";
+import LaravelIcon from "./icons/Laravel.astro";
+import GitIcon from "./icons/Git.astro";
+import PhpIcon from "./icons/Php.astro";
+import MySQL from "./icons/MySQL.astro";
 
 const TAGS = {
     JAVASCRIPT:{
@@ -25,38 +30,92 @@ const TAGS = {
         name:"Tailwind",
         class: "bg-sky-100/20 text-white",
         icon: TailwindIcon,
+    },
+    LARAVEL:{
+        name: "Laravel",
+        class: "bg-sky-100/20 text-white",
+        icon: LaravelIcon,
+    },
+    GIT:{
+        name: "GIT",
+        class: "bg-sky-100/20 text-white",
+        icon: GitIcon,
+    },
+    PHP:{
+        name:"PHP",
+        class: "bg-sky-100/20 text-white",
+        icon: PhpIcon,
+    },
+    MYSQL:{
+        name:"MySQL",
+        class: "bg-sky-100/20 text-white",
+        icon: MySQL,
     }
 }
 
 const PROJECTS = [
     {
-        title: "projecto 11",
+        title: "Conversor Binario",
+        description: "Sitio web con conversor de números entre varios sistemas numéricos.",
+        link: "https://conversorbinario.calculadoradeconjuntos.site/",
+        github: "https://github.com/DahbOne1/ConversorBinario",
+        image: "/img/ConversorBinario.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+    },
+    {
+        title: "Operaciones de Conjuntos",
+        description: "Sitio web con un calculador de operaciones básicas de la teoría de conjuntos.",
+        link: "https://calculadoradeconjuntos.site/",
+        github: "https://github.com/DahbOne1/TeoriaDeConjuntos",
+        image: "/img/ConversorBinario.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+        page: ""
+    },
+    {
+        title: "GEVE: Gestión de Parque Vehicular",
         description: "dskjcdsac",
         link: "12",
         github: "asdcc",
-        image: 'ksjdjsad',
-        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    }
+        image: "/img/ConversorBinario.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL],
+    },
 ]
 ---
 
 {
     PROJECTS.map(project => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>    
-            <p class="text-lg mb-4 text-pretty">{project.description}</p>
-            <ul class="flex gap-x-4 flex-row">
-                {project.tags.map((tag) =>(
-                    <li>
-                        <span class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-4`}>
-                            <tag.icon></tag.icon> {tag.name}    
-                        </span>
-                        
-                    </li>
-                ))}
-            </ul>
-            <img class="rounded shadow-xl shadow-white/10 mt-4" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+        <article class="flex bg-[#eeebff]/10 backdrop-blur-lg gap-4 rounded-md items-start">
+            <img loading="lazy" class="w-3/6 rounded-l-md shadow-xl shadow-white/5" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+            <div class="mt-4">
+                <h3 class="text-xl font-semibold text-blue-300/80">{project.title}</h3>    
+                <p class="w-full text-sm mt-2 lg:w-10/12">{project.description}</p>
+                <ul class="flex gap-4 flex-wrap mt-4">
+                    {project.tags.map((tag) =>(
+                        <li>
+                            <span class={`flex gap-2 items-center rounded-full text-[8px] ${tag.class} py-1 px-4 bg-blue-100/10`}>
+                                <tag.icon></tag.icon> {tag.name}    
+                            </span>          
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </article>
+        <footer class="flex gap-4 mb-20 mt-4 flex-wrap justify-end px-1">
+            {project.github && (<LinkButton href={project.github}>
+                <Github></Github>
+                Ver código fuente    
+            </LinkButton>)}     
+
+            {project.link &&(<LinkButton href={project.link}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
+                Ir al sitio web
+            </LinkButton>)}
+            
+            {project.page &&(<LinkButton href="{link}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
+                Acerca del proyecto
+            </LinkButton>)}
+        </footer>
     ))
 
 }

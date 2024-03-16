@@ -2,6 +2,7 @@
 import Header from "../Components/Header.astro";
 
 import "@fontsource-variable/onest";
+import Footer from "../Components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -22,9 +23,16 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header></Header>
-		<slot />
+		<div class="fixed left-0 top-0 -z-10 h-full w-full">
+			<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		</div>
+		<div class="relative mx-auto h-screen w-full max-w-7xl">
+			<Header></Header>
+			<slot />
+			<Footer></Footer>
+		</div>
+		
+		
 	</body>
 </html>
 <style is:global>

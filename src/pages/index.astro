@@ -8,50 +8,71 @@ import SocialPill from "../Components/SocialPill.astro";
 import SectionContainer from "../Components/SectionContainer.astro";
 import BriefCase from "../Components/icons/BriefCase.astro";
 import Projects from "../Components/Projects.astro";
+import Profile from "../Components/icons/Profile.astro";
+import AboutMe from "../Components/AboutMe.astro";
+import Tool from "../Components/icons/Tool.astro";
+import Form from "../Components/icons/Form.astro";
+import Arrow from "../Components/icons/Arrow.astro";
 ---
 
 <Layout 
-  title="Porfolio de David Hernández - Desarrollador y Programador con 1 año de experiencia"
-  description="Contrata a David para crear tu apliacación web"
->
-	<main class="px-4">
-		<SectionContainer id="inicio" class="py-28 md:py-36">
-			<div class="flex gap-x-4 justify-start items-center mb-6">
-				<img class="rounded-full w-20 h-20 md:w-16 md:h-16" src="https://avatars.githubusercontent.com/u/108157760?u=48f6e24d3de45b5ffff4fac7e0fa829d4a59756b&v=4" alt="david photo">
-				<h1 class="text-white text-4xl md:text-3xl font-bold flex flex-row gap-x-8  "><a href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/" target="_blank"
-					rel="noopener"
-					class="flex justify-center items-center">Hey, soy David Hernández 👋</a> 
-				</h1>
+  title="Porfolio de trabajo de David Hernández - Desarrollador y Programador con 1 año de experiencia como desarrollador de software independiente."
+  description="Contrata a David para crear tu sitio web con tecnologias como HTML, CSS, JavaScript">
+	<main class="m-4">
+		<SectionContainer id="inicio" class="py-28 md:py-28">
+			<div class="flex gap-12">
+				<img class="w-80 h-50 object-cover rounded-md" src="img/ImgHero.webp" alt="Foto de David Hernández">
+				<div>
+					<h1 class="text-white text-4xl md:text-3xl font-bold flex flex-row gap-x-8  "><a href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/" target="_blank"
+						rel="noopener" class="flex justify-center items-center">Hey, soy David Hernández 👋</a> 
+					</h1>	
+					<h2 class="md:text-l md:text-balance opacity-80">
+						<span>1 año de experiencia</span> <span class="text-blue-100/90">como desarrollador de software independiente.</span> 
+						<span class="text-blue-100/80"> De Chilpancingo, México.</span class="opacity-80"> Especializado en el desarrollo web.
+					</h2>
+					<nav class="flex gap-4 mt-4 flex-wrap justify-start items-center md:flex-row">
+						<SocialPill href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/">
+							<Linkedin></Linkedin>
+							LinkedIn
+						</SocialPill>
+						<SocialPill href="https://github.com/DahbOne1">
+							<Github></Github>
+							Github
+						</SocialPill>
+						<SocialPill href="mailto:david.arcos1000@gmail.com">
+							<Gmail></Gmail>
+							David.arcos1000@gmail.com
+						</SocialPill>
+						<Badge>Ver Curriculum Vitae</Badge>
+					</nav>
+				</div>
 			</div>
-			
-			<h2 class="md:text-l md:text-balance opacity-80">
-				<span>1 año de experiencia</span> <span class="text-yellow-200/90">como desarrollador de software independiente.</span> 
-				<span class="text-red-100/90"> De Chilpancingo, México.</span class="opacity-80"> Especializado en el desarrollo web.
-			</h2>
-			<nav class="flex flex-col gap-4 mt-4 flex-wrap md:flex-row">
-				<SocialPill href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/">
-					<Linkedin></Linkedin>
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/DahbOne1">
-					<Github></Github>
-					Github
-				</SocialPill>
-				<SocialPill href="mailto:david.arcos1000@gmail.com">
-					<Gmail></Gmail>
-					David.arcos1000@gmail.com
-				</SocialPill>
-				
-			</nav>
+
 		</SectionContainer>
 
 		<SectionContainer id="proyectos">
-			<h2 class="text-xl font-semibold mb-6 flex gap-x-4 items-center"> <BriefCase></BriefCase>  Proyectos</h2>
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <BriefCase></BriefCase>  Proyectos</h2>
 			<Projects>
-
 			</Projects>
+			<div class="flex justify-center items-center">
+				<a href="/projects/" class="flex items-center justify-center gap-2 rounded-md py-2 px-6 border border-white/10 bg-[#eeebff]/10 backdrop-blur-lg text-2xl hover:bg-[#eeebff]/15 hover:scale-105 transition-all">Ver más proyectos <Arrow></Arrow> </a>
+			</div>
 		</SectionContainer>
-		
+
+		<SectionContainer id="ver-mas" class="mt-20">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"><Tool></Tool> Experiencia en Tecnologías</h2>
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <Profile></Profile>  Sobre mi</h2>
+			<AboutMe>
+			</AboutMe>
+		</SectionContainer>
+
+		<SectionContainer id="contacto">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <Form></Form>  Contacto</h2>
+		</SectionContainer>
 	</main>
+	
 </Layout>
 

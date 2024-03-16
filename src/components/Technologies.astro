@@ -1,0 +1,67 @@
+---
+import JavaScriptIcon from "./icons/JavaScript.astro";
+import CSSIcon from "./icons/CSS.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import LinkButton from "./LinkButton.astro";
+import Github from "./icons/Github.astro";
+import LaravelIcon from "./icons/Laravel.astro";
+import GitIcon from "./icons/Git.astro";
+import PhpIcon from "./icons/Php.astro";
+import MySQL from "./icons/MySQL.astro";
+
+const TAGS = [
+    {
+        name: "JavaScript",
+        class: "bg-sky-100/20 text-white",
+        icon: JavaScriptIcon,
+    },
+    {
+        name: "HTML",
+        class: "bg-sky-100/20 text-white",
+        icon: HTMLIcon,
+    },
+    {
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: CSSIcon,
+    },
+    {
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: TailwindIcon,
+    },
+    {
+        name: "Laravel",
+        class: "bg-sky-100/20 text-white",
+        icon: LaravelIcon,
+    },
+    {
+        name: "GIT",
+        class: "bg-sky-100/20 text-white",
+        icon: GitIcon,
+    },
+    {
+        name:"PHP",
+        class: "bg-sky-100/20 text-white",
+        icon: PhpIcon,
+    },
+    {
+        name:"MySQL",
+        class: "bg-sky-100/20 text-white",
+        icon: MySQL,
+    }
+]
+
+---
+{
+    TAGS.map(cardTag => (
+        <div class="border rounded-md">
+    
+            <span></span>
+            <p></p>
+        </div>
+
+    ))
+
+}

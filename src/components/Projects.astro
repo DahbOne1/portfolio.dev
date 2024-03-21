@@ -56,7 +56,7 @@ const TAGS = {
 const PROJECTS = [
     {
         title: "Conversor Binario",
-        description: "Sitio web con conversor de números entre varios sistemas numéricos.",
+        description: "Sitio web con diseño responsivo para dispositivos móviles con un conversor de números que permite convertir números entre diferentes sistemas numéricos, incluyendo binario, octal, decimal y hexadecimal, de manera rápida y sencilla.",
         link: "https://conversorbinario.calculadoradeconjuntos.site/",
         github: "https://github.com/DahbOne1/ConversorBinario",
         image: "/img/ConversorBinario.webp",
@@ -64,19 +64,17 @@ const PROJECTS = [
     },
     {
         title: "Operaciones de Conjuntos",
-        description: "Sitio web con un calculador de operaciones básicas de la teoría de conjuntos.",
+        description: "Sitio web con diseño responsivo para dispositivos móviles con una calculadora de operaciones básicas de la teoría de conjuntos, permite realizar operaciones con 2 conjuntos de números, incluyendo los las operaciones de unión, intersección, diferencia y diferencia simétrica.",
         link: "https://calculadoradeconjuntos.site/",
         github: "https://github.com/DahbOne1/TeoriaDeConjuntos",
-        image: "/img/ConversorBinario.webp",
+        image: "/img/OperacionesDeConjuntos.webp",
         tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
-        page: ""
     },
     {
-        title: "GEVE: Gestión de Parque Vehicular",
-        description: "dskjcdsac",
-        link: "12",
-        github: "asdcc",
-        image: "/img/ConversorBinario.webp",
+        title: "GEVE: OPTIMIZACIÓN EN GESTIÓN DE PARQUE VEHICULAR DE LAS ZONAS DE LA COMISIÓN FEDERAL DE ELECTRICIDAD",
+        description: "Diseñar y desarrollar una aplicación web hibrida para la superintendencia de la Comisión Federal de Electricidad Zona Chilpancingo de gestión de parque vehicular.",
+        page: "/projects/",
+        image: "/img/geve.webp",
         tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL],
     },
 ]
@@ -84,12 +82,12 @@ const PROJECTS = [
 
 {
     PROJECTS.map(project => (
-        <article class="flex bg-[#eeebff]/10 backdrop-blur-lg gap-4 rounded-md items-start">
-            <img loading="lazy" class="w-3/6 rounded-l-md shadow-xl shadow-white/5" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
-            <div class="mt-4">
+        <article class="flex-col bg-[#eeebff]/10 backdrop-blur-lg rounded-md items-start lg:flex lg:flex-row">
+            <img loading="lazy" class="w-full rounded-t-md shadow-xl shadow-white/5 lg:w-3/6 lg:rounded-l-md lg:rounded-t-none" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+            <div class="mt-6 px-6">
                 <h3 class="text-xl font-semibold text-blue-300/80">{project.title}</h3>    
-                <p class="w-full text-sm mt-2 lg:w-10/12">{project.description}</p>
-                <ul class="flex gap-4 flex-wrap mt-4">
+                <p class="text-sm mt-4 text-pretty">{project.description}</p>
+                <ul class="flex gap-4 flex-wrap mt-4 py-4">
                     {project.tags.map((tag) =>(
                         <li>
                             <span class={`flex gap-2 items-center rounded-full text-[8px] ${tag.class} py-1 px-4 bg-blue-100/10`}>
@@ -111,7 +109,7 @@ const PROJECTS = [
                 Ir al sitio web
             </LinkButton>)}
             
-            {project.page &&(<LinkButton href="{link}">
+            {project.page &&(<LinkButton href="{project.page}">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
                 Acerca del proyecto
             </LinkButton>)}

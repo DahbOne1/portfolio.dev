@@ -3,12 +3,20 @@ import JavaScriptIcon from "./icons/JavaScript.astro";
 import CSSIcon from "./icons/CSS.astro";
 import HTMLIcon from "./icons/HTML.astro";
 import TailwindIcon from "./icons/Tailwind.astro";
-import LinkButton from "./LinkButton.astro";
 import Github from "./icons/Github.astro";
 import LaravelIcon from "./icons/Laravel.astro";
 import GitIcon from "./icons/Git.astro";
 import PhpIcon from "./icons/Php.astro";
 import MySQL from "./icons/MySQL.astro";
+import Firebase from "./icons/Firebase.astro";
+import Flutter from "./icons/Flutter.astro";
+import Astro from "./icons/Astro.astro";
+import IntellIJ from "./icons/IntellIJ.astro";
+import Java from "./icons/Java.astro";
+import Node from "./icons/Node.astro";
+import React from "./icons/React.astro";
+
+
 
 const TAGS = [
     {
@@ -22,7 +30,7 @@ const TAGS = [
         icon: HTMLIcon,
     },
     {
-        name:"Tailwind",
+        name:"CSS",
         class: "bg-sky-100/20 text-white",
         icon: CSSIcon,
     },
@@ -50,18 +58,58 @@ const TAGS = [
         name:"MySQL",
         class: "bg-sky-100/20 text-white",
         icon: MySQL,
+    },
+    {
+        name: "GITHUB",
+        class: "bg-sky-100/20 text-white",
+        icon: Github,
+    },
+    {
+        name:"Astro",
+        class: "bg-sky-100/20 text-white",
+        icon: Astro,
+    },
+    {
+        name:"Firebase",
+        class: "bg-sky-100/20 text-white",
+        icon: Firebase,
+    },
+    {
+        name:"Flutter",
+        class: "bg-sky-100/20 text-white",
+        icon: Flutter,
+    },
+    {
+        name:"IntellIJ",
+        class: "bg-sky-100/20 text-white",
+        icon: IntellIJ,
+    },
+    {
+        name:"Java",
+        class: "bg-sky-100/20 text-white",
+        icon: Java,
+    },
+    {
+        name:"NodeJS",
+        class: "bg-sky-100/20 text-white",
+        icon: Node,
+    },
+    {
+        name:"React",
+        class: "bg-sky-100/20 text-white",
+        icon: React,
     }
 ]
 
 ---
+<article class="flex gap-3 flex-wrap pb-16 justify-start sm:gap-6 sm:justify-center">
 {
-    TAGS.map(cardTag => (
-        <div class="border rounded-md">
-    
-            <span></span>
-            <p></p>
-        </div>
-
+   
+    TAGS.map((tag) => (
+            <div class="border border-white/10 rounded-md py-1 px-5 bg-blue-100/10 backdrop-blur-lg sm:py-5 sm:px-10">
+                <span class="flex gap-2 items-center text-lg ">{tag.name}</span>
+            </div>
     ))
 
 }
+</article>

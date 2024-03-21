@@ -12,18 +12,18 @@ import Profile from "../Components/icons/Profile.astro";
 import AboutMe from "../Components/AboutMe.astro";
 import Tool from "../Components/icons/Tool.astro";
 import Form from "../Components/icons/Form.astro";
-import Arrow from "../Components/icons/Arrow.astro";
+import Technologies from "../Components/Technologies.astro";
 ---
 
 <Layout 
   title="Porfolio de trabajo de David Hernández - Desarrollador y Programador con 1 año de experiencia como desarrollador de software independiente."
   description="Contrata a David para crear tu sitio web con tecnologias como HTML, CSS, JavaScript">
 	<main class="m-4">
-		<SectionContainer id="inicio" class="py-28 md:py-28">
-			<div class="flex gap-12">
-				<img class="w-80 h-50 object-cover rounded-md" src="img/ImgHero.webp" alt="Foto de David Hernández">
-				<div>
-					<h1 class="text-white text-4xl md:text-3xl font-bold flex flex-row gap-x-8  "><a href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/" target="_blank"
+		<SectionContainer id="inicio" class="py-28 mt-10">
+			<div class="flex-col gap-10 lg:flex lg:flex-row">
+				<img class="w-full h-50 object-cover rounded-md lg:w-80" src="img/ImgHero.webp" alt="Foto de David Hernández">
+				<div class="mt-10">
+					<h1 class="text-white text-3xl font-bold flex flex-row gap-x-8"><a href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/" target="_blank"
 						rel="noopener" class="flex justify-center items-center">Hey, soy David Hernández 👋</a> 
 					</h1>	
 					<h2 class="md:text-l md:text-balance opacity-80">
@@ -51,26 +51,21 @@ import Arrow from "../Components/icons/Arrow.astro";
 		</SectionContainer>
 
 		<SectionContainer id="proyectos">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <BriefCase></BriefCase>  Proyectos</h2>
+			<h2 class="text-xl font-semibold mb-6 flex gap-x-4 items-center justify-start sm:justify-center sm:text-3xl"> <BriefCase></BriefCase>  Proyectos</h2>
 			<Projects>
 			</Projects>
-			<div class="flex justify-center items-center">
-				<a href="/projects/" class="flex items-center justify-center gap-2 rounded-md py-2 px-6 border border-white/10 bg-[#eeebff]/10 backdrop-blur-lg text-2xl hover:bg-[#eeebff]/15 hover:scale-105 transition-all">Ver más proyectos <Arrow></Arrow> </a>
-			</div>
-		</SectionContainer>
-
-		<SectionContainer id="ver-mas" class="mt-20">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"><Tool></Tool> Experiencia en Tecnologías</h2>
+			
 		</SectionContainer>
 
 		<SectionContainer id="sobre-mi">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <Profile></Profile>  Sobre mi</h2>
+			<h2 class="text-xl font-semibold mb-6 flex gap-x-4 items-center justify-start sm:justify-center sm:text-3xl"> <Profile></Profile>  Sobre mi</h2>
 			<AboutMe>
 			</AboutMe>
 		</SectionContainer>
 
-		<SectionContainer id="contacto">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-4 items-center justify-center"> <Form></Form>  Contacto</h2>
+		<SectionContainer id="tecnologias" class="mt-20">
+			<h2 class="text-xl font-semibold mb-6 flex gap-x-4 items-center justify-start sm:justify-center sm:text-3xl"><Tool></Tool> Experiencia en Tecnologías</h2>
+			<Technologies></Technologies>
 		</SectionContainer>
 	</main>
 	

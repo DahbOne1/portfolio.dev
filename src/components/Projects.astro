@@ -60,7 +60,7 @@ const PROJECTS = [
         link: "https://conversorbinario.calculadoradeconjuntos.site/",
         github: "https://github.com/DahbOne1/ConversorBinario",
         image: "/img/ConversorBinario.webp",
-        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+        tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },
     {
         title: "Operaciones de Conjuntos",
@@ -68,14 +68,16 @@ const PROJECTS = [
         link: "https://calculadoradeconjuntos.site/",
         github: "https://github.com/DahbOne1/TeoriaDeConjuntos",
         image: "/img/OperacionesDeConjuntos.webp",
-        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+        tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },
     {
-        title: "GEVE: OPTIMIZACIÓN EN GESTIÓN DE PARQUE VEHICULAR DE LAS ZONAS DE LA COMISIÓN FEDERAL DE ELECTRICIDAD",
-        description: "Diseñar y desarrollar una aplicación web hibrida para la superintendencia de la Comisión Federal de Electricidad Zona Chilpancingo de gestión de parque vehicular.",
-        page: "/projects/",
-        image: "/img/geve.webp",
-        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL],
+        title: "Carbonell + Zapata",
+        description: "Página web informativa sobre el despacho de abogados Carbonell Zapata Migration Law, dedicado a tratar situaciones legales migratorias en México sobre visas americanas, cuenta con opción multi-idioma y formulario de contacto.",
+        page: "",
+        link: "https://carbonellzapata.info/",
+        github: "",
+        image: "/img/CarbonellZapata.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.GIT],
     },
 ]
 ---
@@ -98,7 +100,7 @@ const PROJECTS = [
                 </ul>
             </div>
         </article>
-        <footer class="flex gap-4 mb-20 mt-4 flex-wrap justify-end px-1">
+        <footer class="flex gap-4 mb-20 mt-4 flex-wrap justify-end px-1 flex-1">
             {project.github && (<LinkButton href={project.github}>
                 <Github></Github>
                 Ver código fuente    

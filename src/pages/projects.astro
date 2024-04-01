@@ -1,5 +1,85 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import JavaScriptIcon from "../Components/icons/JavaScript.astro";
+import CSSIcon from "../Components/icons/CSS.astro";
+import HTMLIcon from "../Components/icons/HTML.astro";
+import TailwindIcon from "../Components/icons/Tailwind.astro";
+import LinkButton from "../Components/LinkButton.astro";
+import Github from "../Components/icons/Github.astro";
+import LaravelIcon from "../Components/icons/Laravel.astro";
+import GitIcon from "../Components/icons/Git.astro";
+import PhpIcon from "../Components/icons/Php.astro";
+import MySQL from "../Components/icons/MySQL.astro";
+
+const TAGS = {
+    JAVASCRIPT:{
+        name: "JavaScript",
+        class: "bg-sky-100/20 text-white",
+        icon: JavaScriptIcon,
+    },
+    HTML:{
+        name: "HTML",
+        class: "bg-sky-100/20 text-white",
+        icon: HTMLIcon,
+    },
+    CSS:{
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: CSSIcon,
+    },
+    TAILWIND:{
+        name:"Tailwind",
+        class: "bg-sky-100/20 text-white",
+        icon: TailwindIcon,
+    },
+    LARAVEL:{
+        name: "Laravel",
+        class: "bg-sky-100/20 text-white",
+        icon: LaravelIcon,
+    },
+    GIT:{
+        name: "GIT",
+        class: "bg-sky-100/20 text-white",
+        icon: GitIcon,
+    },
+    PHP:{
+        name:"PHP",
+        class: "bg-sky-100/20 text-white",
+        icon: PhpIcon,
+    },
+    MYSQL:{
+        name:"MySQL",
+        class: "bg-sky-100/20 text-white",
+        icon: MySQL,
+    }
+}
+
+const PROJECTS = [
+    {
+        title: "Conversor Binario",
+        description: "Sitio web con diseño responsivo para dispositivos móviles con un conversor de números que permite convertir números entre diferentes sistemas numéricos, incluyendo binario, octal, decimal y hexadecimal, de manera rápida y sencilla.",
+        link: "https://conversorbinario.calculadoradeconjuntos.site/",
+        github: "https://github.com/DahbOne1/ConversorBinario",
+        image: "/img/ConversorBinario.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+    },
+    {
+        title: "Operaciones de Conjuntos",
+        description: "Sitio web con diseño responsivo para dispositivos móviles con una calculadora de operaciones básicas de la teoría de conjuntos, permite realizar operaciones con 2 conjuntos de números, incluyendo los las operaciones de unión, intersección, diferencia y diferencia simétrica.",
+        link: "https://calculadoradeconjuntos.site/",
+        github: "https://github.com/DahbOne1/TeoriaDeConjuntos",
+        image: "/img/OperacionesDeConjuntos.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
+    },
+    {
+        title: "GEVE: OPTIMIZACIÓN EN GESTIÓN DE PARQUE VEHICULAR DE LAS ZONAS DE LA COMISIÓN FEDERAL DE ELECTRICIDAD",
+        description: "Diseño y desarrollo una aplicación web hibrida para la superintendencia de la Comisión Federal de Electricidad Zona Chilpancingo de gestión de parque vehicular.",
+        page: "/projects/",
+        image: "/img/geve.webp",
+        tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL],
+    },
+]
+
 ---
 <Layout 
   title="Porfolio de trabajo de David Hernández - Desarrollador y Programador con 1 año de experiencia como desarrollador de software independiente."

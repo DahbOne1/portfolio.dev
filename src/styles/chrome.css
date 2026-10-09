@@ -1,0 +1,41 @@
+/* Colour tokens — override to re-skin the effect:
+   --ink    main text colour (defaults to currentColor)
+   --ink-2  primary accent   --ink-3  secondary accent */
+:root { --ink: currentColor; --ink-2: #FF4FD8; --ink-3: #4FF8FF; }
+
+/* 70 Carrara — liquid marble veins drift through polished stone letterforms */
+.fx-marble {
+  color: transparent;
+  background:
+    radial-gradient(ellipse 40% 70% at 18% 42%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 0%,
+      transparent 55%),
+    radial-gradient(ellipse 50% 40% at 72% 58%,
+      color-mix(in srgb, var(--ink-3) 40%, transparent) 0%,
+      transparent 50%),
+    linear-gradient(118deg,
+      #f4f0ea 0%,
+      #d9d2c8 14%,
+      var(--ink-2) 22%,
+      #ebe6df 34%,
+      var(--ink-3) 48%,
+      #cfc7bb 58%,
+      #f7f3ed 72%,
+      var(--ink) 86%,
+      #e8e2d8 100%);
+  background-size: 160% 160%, 180% 180%, 280% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .28));
+  animation: fx-marble 5.2s ease-in-out infinite alternate;
+}
+@keyframes fx-marble {
+  0% {
+    background-position: 8% 30%, 90% 70%, 0% 50%;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, .28)) saturate(1);
+  }
+  100% {
+    background-position: 78% 68%, 12% 22%, 100% 50%;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, .34)) saturate(1.15);
+  }
+}

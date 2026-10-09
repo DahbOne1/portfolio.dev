@@ -1,0 +1,108 @@
+---
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Cambiar tema"
+  class="w-8 flex items-center justify-center cursor-pointer"
+>
+  <!-- Sol -->
+  <svg
+    id="sun-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="text-[#aeb4bd]"
+  >
+    <circle cx="12" cy="12" r="3.5"></circle>
+
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+
+    <path d="m4.93 19.07 1.41-1.41"></path>
+    <path d="m17.66 6.34 1.41-1.41"></path>
+  </svg>
+
+  <!-- Luna -->
+  <svg
+    id="moon-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="hidden text-[#aeb4bd]"
+  >
+    <path
+      d="M21 12.8A8.5 8.5 0 1 1 11.2 3
+         a6.7 6.7 0 0 0 9.8 9.8Z"
+    ></path>
+  </svg>
+</button>
+
+<script>
+  const button = document.querySelector("#theme-toggle");
+  const sunIcon = document.querySelector("#sun-icon");
+  const moonIcon = document.querySelector("#moon-icon");
+
+  if (button && sunIcon && moonIcon) {
+
+    const applyTheme = (theme: "light" | "dark") => {
+      const isDark = theme === "dark";
+
+      document.documentElement.classList.toggle(
+        "dark",
+        isDark
+      );
+
+      sunIcon.classList.toggle(
+        "hidden",
+        isDark
+      );
+
+      moonIcon.classList.toggle(
+        "hidden",
+        !isDark
+      );
+
+      localStorage.setItem("theme", theme);
+    };
+
+    // Recuperar tema guardado
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      applyTheme("dark");
+    } else {
+      applyTheme("light");
+    }
+
+    // Cambiar tema
+    button.addEventListener("click", () => {
+
+      const isDark =
+        document.documentElement.classList.contains("dark");
+
+      applyTheme(
+        isDark ? "light" : "dark"
+      );
+    });
+  }
+</script>

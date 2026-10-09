@@ -1,0 +1,15 @@
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 14s linear infinite;
+
+}
+.marquee-zone:hover .marquee-track {
+  animation-play-state: paused;
+  
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+/* Duplicate the chip list once so -50% loops seamlessly */

@@ -1,0 +1,67 @@
+---
+import Global from '../icons/Global.astro'
+
+
+const languages = [
+    {code:"en", name:"English", direction: "ltr"},
+    {code:"es", name: "Español", direction: "ltr"},
+]
+
+const currentLocale = Astro.currentLocale ?? "es";
+
+---
+
+<details class="group relative w-fit">
+  <!-- Botón -->
+  <summary class="flex cursor-pointer list-none items-center gap-1 backdrop-blur-3xl h-12 w-full px-2 rounded-md">
+   
+    <Global></Global>
+      <span>
+      {
+        languages.find((language) => language.code === currentLocale)?.name
+      }
+    </span>
+
+    <!-- Flecha -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="transition-transform duration-200 group-open:rotate-180"
+    >
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </summary>
+
+  <!-- Dropdown -->
+  <div class="absolute right-0 z-50 mt-5 w-26 rounded-md bg-[#eeebff]/10 backdrop-blur-3xl px-4 py-5">
+    <nav class="flex flex-col gap-5">
+
+      {
+        languages.map((language) => (
+          <a
+            href={`/${language.code}/`}
+            lang={language.code}
+            dir={language.direction}
+            class:list={[
+              "block leading-none no-underline",
+            ]}
+          >
+            {language.code === currentLocale && (
+              <span class="mr-2">•</span>
+            )}
+
+            {language.name}
+          </a>
+        ))
+      }
+
+    </nav>
+  </div>
+</details>

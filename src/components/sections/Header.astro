@@ -1,15 +1,15 @@
 ---
 
-import Sun from "./icons/Sun.astro";
-import Menu from "./icons/Menu.astro";
+import { ContactDetailsReveal } from "../microkit/contact-details-reveal";
+import  LenguageSelector  from "../components/LenguageSelector.astro";
+import ThemeToggle  from "../components/ThemeToggle.astro";
 
-//const nav = document.getElementById('nav');
-//const boton = document.getElementById('boton');
 
-//boton.addEventListener('click', function() {
-   // nav.classList.toggle('hidden');
-//});
-
+const languages = [
+    {code:"en"},
+    {code:"es"},
+]
+const currentLocale = Astro.currentLocale ?? "es";
 ---
 
 <script>
@@ -29,30 +29,34 @@ import Menu from "./icons/Menu.astro";
 
 </script>
 
-<div class="hidden sm:block">
-    <header class="flex justify-between items-center py-2 px-6 w-11/12 rounded-md mx-auto bg-[#eeebff]/10 backdrop-blur-lg mt-6 text-blue-100/70 text-sm">     
-        <div>
-            <img src="../img/ImgHeader.webp" alt="Imagen de David Hernández" class="rounded-full h-8 w-8">
+<div class="fixed z-50 top-0 hidden sm:flex justify-center w-full text-blue-100/70 ">
+    <header class="flex items-center mx-auto mt-6 text-sm gap-5 ">     
+        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 w-12 rounded-md flex justify-center items-center">
+            <a href="/">
+                <img loading="lazy" src="../img/developer/img_developer_navbar.webp" alt="Imagen de David Hernández" class="rounded-full h-8 w-8 object-cover">
+            </a>
         </div>
-        <nav class="flex flex-row justify-center gap-x-10 opacity-8pnp0 px-6 py-1 mx-auto lg:w-[600px]">
+        <nav class="bg-[#eeebff]/10 backdrop-blur-3xl rounded-md flex flex-row justify-center items-center gap-x-10 opacity-8pnp0 px-6 py-1 mx-auto h-12">
             <a href="/#inicio" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Inico</a>
             <a href="/#proyectos" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Proyectos</a>
             <a href="/#sobre-mi" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Sobre mi</a>
             <a href="/#tecnologias" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Tecnologías</a> 
         </nav>
-      <!--<div class="gap-4 justify-center items-center">
-            <nav>
-                <a class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100" href="">ES</a>
-                <span> / </span>
-                <a class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100" href="">EN</a>
-            </nav>
-            <button>
-                <Moon></Moon>
-            </button>
-        </div>-->
+        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
+            <ThemeToggle></ThemeToggle>
+        </div>
+        <div class="bg-[#eeebff]/10  flex justify-center items-center rounded-md w-auto">
+            <LenguageSelector></LenguageSelector>      
+        </div>
+        
+        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
+            <ContactDetailsReveal></ContactDetailsReveal>
+        </div>
+   
     </header>
 </div>
 
+<!-- 
 <div class="sm:hidden">
     <header class="w-full mx-auto  text-blue-100/70 text-md fixed z-10 top-0 inset">     
        <section class="flex justify-between items-center py-5 px-6 bg-[#eeebff]/10 backdrop-blur-xl">
@@ -68,7 +72,7 @@ import Menu from "./icons/Menu.astro";
                 <button>
                     <Moon></Moon>
                 </button>
-            </div>-->
+            </div>
             <div>
                 <button id="boton">
                     <Menu></Menu>
@@ -88,3 +92,4 @@ import Menu from "./icons/Menu.astro";
     </header>
 </div>
 
+-->

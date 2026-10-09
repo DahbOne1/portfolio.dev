@@ -1,18 +1,18 @@
 ---
-import JavaScriptIcon from "./icons/JavaScript.astro";
-import CSSIcon from "./icons/CSS.astro";
-import HTMLIcon from "./icons/HTML.astro";
-import TailwindIcon from "./icons/Tailwind.astro";
-import LinkButton from "./LinkButton.astro";
-import Github from "./icons/Github.astro";
-import LaravelIcon from "./icons/Laravel.astro";
-import GitIcon from "./icons/Git.astro";
-import PhpIcon from "./icons/Php.astro";
-import MySQL from "./icons/MySQL.astro";
-import AstroIcon from "./icons/Astro.astro";
-import JSON from "./icons/Json.astro";
-import JetpackCompose from "./icons/JetPackCompose.astro";
-import Icon from "./icons/Icon.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import CSSIcon from "../icons/CSS.astro";
+import HTMLIcon from "../icons/HTML.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Github from "../icons/Github.astro";
+import LaravelIcon from "../icons/Laravel.astro";
+import GitIcon from "../icons/Git.astro";
+import PhpIcon from "../icons/Php.astro";
+import MySQL from "../icons/MySQL.astro";
+import AstroIcon from "../icons/Astro.astro";
+import JSON from "../icons/Json.astro";
+import JetpackCompose from "../icons/JetPackCompose.astro";
+import Icon from "../icons/Icon.astro";
 
 const TAGS = {
     JAVASCRIPT:{
@@ -82,11 +82,11 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },*/
     {
-        title: "Operaciones de Conjuntos",
+        title: "SetSolver",
         description: "Sitio web con diseño responsivo para dispositivos móviles con una calculadora de operaciones básicas de la teoría de conjuntos, permite realizar operaciones con 2 conjuntos de números, incluyendo los las operaciones de unión, intersección, diferencia y diferencia simétrica.",
         link: "https://calculadoraconjuntos.site/",
         github: "https://github.com/DahbOne1/TeoriaDeConjuntos",
-        image: "/img/CalculadoraDeConjuntos.webp",
+        image: "../../img/projects/CalculadoraDeConjuntos.webp",
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },
     {
@@ -119,11 +119,20 @@ const PROJECTS = [
      {
         title: "Fraseo",
         description: "Fraseo es una aplicación móvil orientada a mejorar la autoestima y motivar a sus usuarios mediante frases diarias positivas. La app permite seleccionar categorías temáticas, guardar frases como favoritas y compartirlas fácilmente en redes sociales.",
-        page: "https://play.google.com/store/apps/details?id=com.digiwebstudio.fraseoapp",
+        page: "",
         link: "https://fraseo.site/",
         github: "",
         image: "/img/Fraseo.webp",
         tags: [TAGS.JSON, TAGS.JETPACKCOMPOSE],
+    },
+     {
+        title: "COLEGIO CRICA A. C.",
+        description: "Sitio web con diseño responsivo para dispositivos móviles sobre un colegio privado ubicado en Chilpancingo de los Bravo Guerrero, enfocado en la modernizacion del diseño y porporcionar información a los clientes sobre las intalaciones y niveles educativos de la institución.",
+        page: "",
+        link: "https://dahbone1.github.io/colegio-crica/",
+        github: "",
+        image: "/img/Crica.webp",
+        tags: [TAGS.JSON, TAGS.HTML, TAGS.ASTRO, TAGS.CSS, TAGS.TAILWIND],
     },
 
 ]
@@ -131,38 +140,35 @@ const PROJECTS = [
 
 {
     PROJECTS.map(project => (
-        <article class="flex-col bg-[#eeebff]/5 backdrop-blur-lg rounded-2xl justify-start items-start lg:flex lg:flex-row shadow-md shadow-white/10">
-            <img loading="lazy" class="w-1/12 rounded-xl shadow-xl shadow-white/5 lg:w-3/6 lg:rounded-lg" src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
-            <div class="w-11/12 mt-4 px-6">
-                <h3 class="text-xl font-semibold text-blue-300/80">{project.title}</h3>    
-                <p class="text-sm mt-2 text-pretty text-white">{project.description}</p>
-                <ul class="flex gap-4 flex-wrap py-4">
+        <article data-aos="fade-up" data-aos-duration="3000"   class="flex-col justify-start items-start lg:flex lg:flex-row mb-40">
+            <div class="w-7/12 flex gap-5">
+                <img loading="lazy" class="object-cover h-80 rounded-2xl shadow-xl shadow-white/5 lg:w-3/12 " src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+                <img loading="lazy" class="object-cover h-00 rounded-2xl shadow-xl shadow-white/5 lg:w-9/12 " src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
+            </div>
+            <div class="w-5/12 pl-10">
+                <h3 class="text-3xl text-blue-300/80">{project.title}</h3>    
+                   <ul class="flex gap-4 flex-wrap py-4">
                     {project.tags.map((tag) =>(
                         <li>
-                            <span class={`flex gap-2 items-center rounded-full text-[8px] ${tag.class} py-1 px-4 bg-blue-100/10 text-white`}>
+                            <span class={`text-xs flex items-center gap-3 py-1.5 px-3 rounded-4xl bg-[#eeebff]/10 backdrop-blur-3xl border border-blue-100/70  ${tag.class} `}>
                                 <tag.icon></tag.icon> {tag.name}    
                             </span>          
                         </li>
                     ))}
                 </ul>
+                <p class="text-sm mt-2 text-pretty text-white">{project.description}</p>
+                <div class="flex items-start gap-5 mt-5 text-white">
+                    {project.github && (<LinkButton href={project.github}>
+                        <Github></Github>
+                    </LinkButton>)}     
+
+                    {project.link &&(<LinkButton href={project.link}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
+                    </LinkButton>)}
+                    
+                </div>
             </div>
         </article>
-        <footer class="flex gap-4 mb-20 mt-4 flex-wrap justify-end px-1 flex-1 text-white">
-            {project.github && (<LinkButton href={project.github}>
-                <Github></Github>
-                Ver código fuente    
-            </LinkButton>)}     
-
-            {project.link &&(<LinkButton href={project.link}>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
-                Ir al sitio web
-            </LinkButton>)}
-            
-            {project.page &&(<LinkButton href="{project.page}">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
-                Acerca del proyecto
-            </LinkButton>)}
-        </footer>
     ))
 
 }

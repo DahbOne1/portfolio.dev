@@ -1,0 +1,7 @@
+---
+const {description, id} = Astro.props;
+---
+<div id=`tooltip-animation-${id}` role="tooltip" class="w-auto absolute z-10 invisible inline-block px-3 py-2 text-[8px] font-medium text-white transition-opacity duration-300 bg-dark rounded-base shadow-xs opacity-0 tooltip">
+    {description}
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>

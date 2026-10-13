@@ -14,6 +14,8 @@ import JSON from "../icons/Json.astro";
 import JetpackCompose from "../icons/JetPackCompose.astro";
 import Icon from "../icons/Icon.astro";
 
+
+
 const TAGS = {
     JAVASCRIPT:{
         name: "JavaScript",
@@ -82,6 +84,7 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },*/
     {
+        id:1,
         title: "SetSolver",
         description: "Sitio web con diseño responsivo para dispositivos móviles con una calculadora de operaciones básicas de la teoría de conjuntos, permite realizar operaciones con 2 conjuntos de números, incluyendo los las operaciones de unión, intersección, diferencia y diferencia simétrica.",
         link: "https://calculadoraconjuntos.site/",
@@ -90,48 +93,53 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.GIT],
     },
     {
+        id: 2,
         title: "Carbonell + Zapata",
         description: "Página web informativa sobre el despacho de abogados Carbonell Zapata Migration Law, dedicado a tratar situaciones legales migratorias en México sobre visas americanas, cuenta con opción multi-idioma y formulario de contacto.",
         page: "",
         link: "https://dahbone1.github.io/MisionCarbonell/",
         github: "",
-        image: "/img/CarbonellZapata.webp",
+        image: "../../img/projects/CarbonellZapata.webp",
         tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.GIT, TAGS.JSON],
     },
      {
+        id: 3,
         title: "Consorcio Abastecedor Chapingo",
         description: "Diseño y desarrollo integral del sitio web para Consorcio Abastecedor Chapingo, una empresa dedicada al abasto y distribución de productos agrícolas. La página busca presentar los servicios que ofrece, la oferta de productos, información institucional, y contacto directo para clientes y socios interesados.",
         page: "",
         link: "https://www.consorcioabastecedorchapingo.com/",
         github: "",
-        image: "/img/ConsorcioChapingo.webp",
+        image: "../../img/projects/ConsorcioChapingo.webp",
         tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.GIT, TAGS.ASTRO],
     },
      {
+        id:4,
         title: "F1 Radar",
         description: "Desarrollo integral del sitio web F1 Radar, un portal orientado a fanáticos de la Fórmula 1 que ofrece calendario de Grandes Premios, horarios, estadísticas de pilotos y equipos, y seguimiento informativo en tiempo real. El objetivo del sitio es consolidar información técnica y de competición en una interfaz clara y accesible para audiencias en español latino.",
         page: "",
         link: "https://f1radar.site/",
         github: "",
-        image: "/img/F1Radar.webp",
+        image: "../../img/projects/F1Radar.webp",
         tags: [TAGS.CSS, TAGS.HTML, TAGS.JAVASCRIPT, TAGS.GIT, TAGS.ASTRO],
     },
      {
+        id:5,
         title: "Fraseo",
         description: "Fraseo es una aplicación móvil orientada a mejorar la autoestima y motivar a sus usuarios mediante frases diarias positivas. La app permite seleccionar categorías temáticas, guardar frases como favoritas y compartirlas fácilmente en redes sociales.",
         page: "",
         link: "https://fraseo.site/",
         github: "",
-        image: "/img/Fraseo.webp",
+        image: "../../img/projects/Fraseo.webp",
         tags: [TAGS.JSON, TAGS.JETPACKCOMPOSE],
     },
      {
+        id:6,
         title: "COLEGIO CRICA A. C.",
         description: "Sitio web con diseño responsivo para dispositivos móviles sobre un colegio privado ubicado en Chilpancingo de los Bravo Guerrero, enfocado en la modernizacion del diseño y porporcionar información a los clientes sobre las intalaciones y niveles educativos de la institución.",
         page: "",
         link: "https://dahbone1.github.io/colegio-crica/",
         github: "",
-        image: "/img/Crica.webp",
+        image: "../../img/projects/Crica.webp",
         tags: [TAGS.JSON, TAGS.HTML, TAGS.ASTRO, TAGS.CSS, TAGS.TAILWIND],
     },
 
@@ -140,17 +148,17 @@ const PROJECTS = [
 
 {
     PROJECTS.map(project => (
-        <article data-aos="fade-up" data-aos-duration="3000"   class="flex-col justify-start items-start lg:flex lg:flex-row mb-40">
+        <article data-aos="fade-up" data-aos-duration="2000"   class="flex-col justify-start items-start lg:flex lg:flex-row mb-30 ">
             <div class="w-7/12 flex gap-5">
                 <img loading="lazy" class="object-cover h-80 rounded-2xl shadow-xl shadow-white/5 lg:w-3/12 " src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
                 <img loading="lazy" class="object-cover h-00 rounded-2xl shadow-xl shadow-white/5 lg:w-9/12 " src={project.image} alt={`Captura de pantalla del proyecto ${project.image}`}>
             </div>
             <div class="w-5/12 pl-10">
-                <h3 class="text-3xl text-blue-300/80">{project.title}</h3>    
-                   <ul class="flex gap-4 flex-wrap py-4">
+                <h3 class="text-3xl text-blue-300/80 font-semibold">{project.title}</h3>    
+                   <ul class="flex gap-2 flex-wrap py-4">
                     {project.tags.map((tag) =>(
                         <li>
-                            <span class={`text-xs flex items-center gap-3 py-1.5 px-3 rounded-4xl bg-[#eeebff]/10 backdrop-blur-3xl border border-blue-100/70  ${tag.class} `}>
+                            <span class={`text-[8px] flex items-center gap-2 py-1.5 px-3 rounded-4xl bg-[#eeebff]/10 backdrop-blur-3xl border border-blue-100/70  ${tag.class} `}>
                                 <tag.icon></tag.icon> {tag.name}    
                             </span>          
                         </li>
@@ -158,14 +166,27 @@ const PROJECTS = [
                 </ul>
                 <p class="text-sm mt-2 text-pretty text-white">{project.description}</p>
                 <div class="flex items-start gap-5 mt-5 text-white">
-                    {project.github && (<LinkButton href={project.github}>
-                        <Github></Github>
-                    </LinkButton>)}     
+                          {project.github && (
+                            <div class="w-10">
+                                <LinkButton  id=`${project.id}1` description="Visitar repositorio" href={project.github} >
+                                    <Github></Github>
+                                </LinkButton>
+                            </div>
+                            )}     
 
-                    {project.link &&(<LinkButton href={project.link}>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
-                    </LinkButton>)}
+                   
                     
+                        {project.link &&(
+                            <div class="w-10">
+                                <LinkButton id={project.id} description="Ver Demo" href={project.link}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-app-window-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3zm-12.99 3l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993zm3 0l-.127 .007a1 1 0 0 0 .117 1.993l.127 -.007a1 1 0 0 0 -.117 -1.993z" stroke-width="0" fill="currentColor" /></svg>    
+                                </LinkButton>
+                            </div>
+                        )}
+
+                    
+
+                             
                 </div>
             </div>
         </article>

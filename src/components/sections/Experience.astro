@@ -1,0 +1,76 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        dateStart: ' ',
+        dateEnd: '',
+        status: true,
+        duration: '',
+        description: '',
+        title: '',
+        workplace: ''
+    },
+    {
+        dateStart: '2024',
+        dateEnd: '2026',
+        status: false,
+        duration: '2 años',
+        description: `Realicé mantenimiento correctivo y preventivo de la red del colegio.
+Rehabilité y documenté la red de internet en los tres niveles educativos.
+Diseñé y construí la nueva página web oficial.
+Desarrollé un sistema de administración de registros de alumnos.`,
+        title: 'Auxiliar de tecnologías de la información',
+        workplace: 'Colegio Crica A. C.'
+    },
+    {
+        dateStart: '2023',
+        dateEnd: '2024',
+        status: false,
+        duration: '5 meses',
+        description: `Lideré un equipo de 3 desarrolladores en el diseño y desarrollo de una aplicación robusta, organizando eficazmente la distribución de tareas para garantizar la entrega puntual del proyecto.
+Diseñé y desarrollé una estructura de base de datos en MySQL, estableciendo relaciones clave-primaria y clave-externa para asegurar la integridad y eficiencia de los datos.
+Desarrollé una API RESTful utilizando Laravel para el backend, facilitando la comunicación eficiente entre el servidor y los clientes.
+Diseñé e implementé interfaces de usuario accesibles y responsivas con HTML, CSS, JavaScript y Tailwind CSS, mejorando significativamente la experiencia de usuario en dispositivos múltiples.
+Implementé la metodología Modelo-Vista-Controlador (MVC) para optimizar la calidad del código, resultando en un software más robusto`,
+        title: 'FullStack Developer',
+        workplace: 'Comisión Federal de Electricidad Zona Chilpancingo'
+    },
+      {
+        dateStart: '2023 ',
+        dateEnd: '2023',
+        status: false,
+        duration: '3 mses',
+        description: `Diseño y creación de prototipos de vehículos aéreos mediante programación de microcontroladores.
+Fabricación de piezas de vehículos utilizando impresión 3D.
+Ensamblaje de vehículos con las partes impresas.
+Participación en eventos científicos internacionales para presentar proyectos.`,
+        title: 'Software Developer',
+        workplace: 'Verano de la Investigación Científica y Tecnológica del Pacífico'
+    },
+      {
+        dateStart: '2022',
+        dateEnd: '2022',
+        status: false,
+        duration: '3 meses',
+        description: `Diseño de interfaz y base de datos para plataforma web.
+Desarrollo de casos de uso para nuevas funcionalidades.
+Aplicación de arquitectura MVC con framework Laravel.
+Participación en congreso internacional.`,
+        title: 'FullStack Developer',
+        workplace: 'Verano de la Investigación Científica y Tecnológica del Pacífico'
+    },
+]
+---
+
+
+
+<ol class="relative border-s border-default">                  
+   {
+    EXPERIENCE.map(experience =>(
+        <ExperienceItem {...experience}></ExperienceItem>
+    ))
+   }
+
+</ol>
+

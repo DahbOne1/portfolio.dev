@@ -10,31 +10,38 @@ import Hero from '../../components/sections/Hero.astro';
 import Form from "../../components/icons/Form.astro";
 import Technologies from "../../components/components/Technologies.astro";
 import Title from '@/components/components/Title.astro';
+import Experience from '@/components/sections/Experience.astro';
 ---
 
 <Layout 
-  title="Porfolio de trabajo de David Hernández - Desarrollador y Programador con 1 año de experiencia como desarrollador de software independiente."
-  description="Contrata a David para crear tu sitio web con tecnologias como HTML, CSS, JavaScript">
+  title="Portafolio de trabajo de David Hernández - Desarrollador y Programador con 3 años de experiencia como desarrollador de software independiente."
+  description="Portafolio web de trabajo de David Hernández, contrata David para crear tu sitio, app o plataforma web con tecnologias como HTML, CSS, JavaScript, Astro, React, IA entre otras más, con trabajo dedicado al detalle y visualmente atractivo, enfocado en conocer tu necesidad y visión de trabajo prpyectandola a tus clientes.">
 	<main class="">
 		<SectionContainer id="inicio" class="py-28">
 			<Hero></Hero>
 		</SectionContainer>
 
 		<SectionContainer id="proyectos">
-			<Title> <BriefCase></BriefCase>  Proyectos</Title>
+			<Title>../Proyectos/.</Title>
 			<Projects>
 			</Projects>
 			
 		</SectionContainer>
 
+		<SectionContainer>
+			<Title>Experiencia</Title>
+			<Experience>
+			</Experience>
+		</SectionContainer>
+
 		<SectionContainer id="sobre-mi">
-			<Title> <Profile></Profile>  Sobre mi</Title>
+			<Title>../Sobre mi/.</Title>
 			<AboutMe>
 			</AboutMe>
 		</SectionContainer>
 
 		<SectionContainer id="tecnologias" class="mt-20">
-			<h2 class="text-xl font-semibold mb-6 flex gap-x-4 items-center justify-start sm:justify-center sm:text-3xl"><Tool></Tool> Experiencia en Tecnologías</h2>
+			<Title>../Stack Tecnológico/.</Title>
 			<Technologies></Technologies>
 		</SectionContainer>
 	</main>

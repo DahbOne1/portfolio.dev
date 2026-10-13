@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/onest';
 import Header from "../components/sections/Header.astro";
 
 //import "@fontsource-variable/onest";
@@ -53,15 +54,20 @@ import 'aos/dist/aos.css';
 			<Footer></Footer>
 		</div>
 		
-		
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+		 <script>
+      import "flowbite";
+    </script>
 	</body>
+	
+
 </html>
 <style is:global>
 	:root {
 		scroll-behavior: smooth;
 	}
 	html {
-		font-family: "Onest variable",system-ui, sans-serif;
+		font-family: 'Onest Variable',system-ui, sans-serif;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;

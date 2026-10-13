@@ -2,12 +2,11 @@
 
 import { useId, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import Gmail from "../icons/Gmail.astro";
 
 const socials = [
-  { label: "David Hernández on LinkedIn", href: "https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/", brand: "#0a66c2", icon: "linkedin" },
-  { label: "David Hernández on GitHub", href: "https://github.com/DahbOne1", brand: "#f0f0f0", icon: "github" },
-  { label: "David Hernández on Gmail", href: "mailto:david.arcos1000@gmail.com", brand: "#e4405f", icon: "gmail" },
+  { label: "David Hernández en LinkedIn", href: "https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/", brand: "#0a66c2", icon: "linkedin" },
+  { label: "David Hernández en GitHub", href: "https://github.com/DahbOne1", brand: "#f0f0f0", icon: "github" },
+  { label: "David Hernández en Gmail", href: "mailto:david.arcos1000@gmail.com", brand: "#e4405f", icon: "gmail" },
 ];
 
 function SocialIcon({ name = "linkedin" }) {

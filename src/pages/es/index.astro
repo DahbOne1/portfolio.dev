@@ -1,16 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import SectionContainer from "../../components/SectionContainer.astro";
-import BriefCase from "../../components/icons/BriefCase.astro";
 import Projects from "../../components/sections/Projects.astro";
-import Profile from "../../components/icons/Profile.astro";
 import AboutMe from "../../components/sections/AboutMe.astro";
-import Tool from "../../components/icons/Tool.astro";
 import Hero from '../../components/sections/Hero.astro';
-import Form from "../../components/icons/Form.astro";
 import Technologies from "../../components/components/Technologies.astro";
 import Title from '@/components/components/Title.astro';
 import Experience from '@/components/sections/Experience.astro';
+import ContactMe  from '@/components/sections/ContactMe.astro';
+import ProccesWithMe  from '@/components/sections/ProccesWithMe.astro';
 ---
 
 <Layout 
@@ -22,7 +20,7 @@ import Experience from '@/components/sections/Experience.astro';
 		</SectionContainer>
 
 		<SectionContainer id="proyectos">
-			<Title>../Proyectos/.</Title>
+			<Title>Proyectos</Title>
 			<Projects>
 			</Projects>
 			
@@ -35,14 +33,25 @@ import Experience from '@/components/sections/Experience.astro';
 		</SectionContainer>
 
 		<SectionContainer id="sobre-mi">
-			<Title>../Sobre mi/.</Title>
+			<Title>Sobre mi</Title>
 			<AboutMe>
 			</AboutMe>
 		</SectionContainer>
 
 		<SectionContainer id="tecnologias" class="mt-20">
-			<Title>../Stack Tecnológico/.</Title>
+			<Title>Stack Tecnológico</Title>
 			<Technologies></Technologies>
+		</SectionContainer>
+
+
+		<SectionContainer id="proceso-conmigo">
+			<Title>Mi trabajo</Title>
+			<ProccesWithMe></ProccesWithMe>
+		</SectionContainer>
+
+		<SectionContainer id="contactame" class="mt-20">
+			<Title>Contactame</Title>
+			<ContactMe></ContactMe>
 		</SectionContainer>
 	</main>
 	

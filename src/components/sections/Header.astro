@@ -3,6 +3,7 @@
 import { ContactDetailsReveal } from "../microkit/contact-details-reveal";
 import  LenguageSelector  from "../components/LenguageSelector.astro";
 import ThemeToggle  from "../components/ThemeToggle.astro";
+import Menu from "../icons/Menu.astro";
 
 ---
 
@@ -24,50 +25,51 @@ import ThemeToggle  from "../components/ThemeToggle.astro";
 </script>
 
 <div class="fixed z-50 top-0 hidden sm:flex justify-center w-full text-blue-100/70 ">
-    <header class="flex items-center mx-auto mt-6 text-sm gap-5 ">     
+    <header class="flex items-center mx-auto mt-6 text-sm lg:gap-5 md:gap-2">     
         <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 w-12 rounded-md flex justify-center items-center">
             <a href="/">
-                <img loading="lazy" src="../img/developer/img_developer_navbar.webp" alt="Imagen de David Hernández" class="rounded-full h-8 w-8 object-cover">
+                <img loading="lazy" src="../img/developer/img_developer_navbar.webp" alt="Imagen para la sección del header del desarrollador de software David Hernández, FullStack Developer" class="rounded-full h-8 w-8 object-cover">
             </a>
         </div>
-        <nav class="bg-[#eeebff]/10 backdrop-blur-3xl rounded-md flex flex-row justify-center items-center gap-x-10 opacity-8pnp0 px-6 py-1 mx-auto h-12">
+        <nav class="bg-[#eeebff]/10 backdrop-blur-3xl rounded-md flex justify-center items-center lg:gap-10 opacity-8pnp0 px-6 py-1 mx-auto h-12 md:gap-4">
             <a href="/#inicio" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Inicio</a>
             <a href="/#proyectos" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Proyectos</a>
             <a href="/#sobre-mi" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Sobre mi</a>
             <a href="/#experiencia" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Experiencia</a> 
+            <a href="/#contactame" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Contactame</a> 
         </nav>
-        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
+   <!--   <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
             <ThemeToggle></ThemeToggle>
         </div>
         <div class="bg-[#eeebff]/10  flex justify-center items-center rounded-md w-auto">
             <LenguageSelector></LenguageSelector>      
-        </div>
+        </div> --> 
         
-        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
+        <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto md:hidden lg:block">
             <ContactDetailsReveal></ContactDetailsReveal>
         </div>
    
     </header>
 </div>
 
-<!-- 
+
 <div class="sm:hidden">
     <header class="w-full mx-auto  text-blue-100/70 text-md fixed z-10 top-0 inset">     
-       <section class="flex justify-between items-center py-5 px-6 bg-[#eeebff]/10 backdrop-blur-xl">
-            <div>
-                <img src="../img/ImgHeader.webp" alt="Imagen de David Hernández" class="rounded-full h-8 w-8">
+       <section class="flex justify-between items-center py-5 px-6 ">
+            <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 w-12 rounded-md flex justify-center items-center">
+                <a href="/">
+                    <img loading="lazy" src="../img/developer/img_developer_navbar.webp" alt="Imagen para la sección del header del desarrollador de software David Hernández, FullStack Developer" class="rounded-full h-8 w-8 object-cover">
+                </a>
             </div>
-          <!--   <div class="flex gap-4 justify-center items-center">
-                <nav>
-                    <a class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100" href="">ES</a>
-                    <span> / </span>
-                    <a class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100" href="">EN</a>
-                </nav>
-                <button>
-                    <Moon></Moon>
-                </button>
-            </div>
-            <div>
+            <!-- <div class="flex gap-4 justify-center items-center">
+               <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 flex justify-center items-center rounded-md px-2 gap-3 w-auto">
+                    <ThemeToggle></ThemeToggle>
+                </div>
+                <div class="bg-[#eeebff]/10  flex justify-center items-center rounded-md w-auto">
+                    <LenguageSelector></LenguageSelector>      
+                </div>  
+            </div>-->
+            <div class="bg-[#eeebff]/10 backdrop-blur-3xl h-12 w-12 rounded-md flex justify-center items-center">
                 <button id="boton">
                     <Menu></Menu>
                 </button>
@@ -75,15 +77,15 @@ import ThemeToggle  from "../components/ThemeToggle.astro";
         </section>  
 
         <div id="nav" class="hidden">
-            <nav class="text-center flex flex-col justify-center gap-20 px-6 py-10 mx-auto text-2xl bg-neutral-900/80 backdrop-blur-lg">
-                <a class="link" href="/#inicio">Inico</a>
-                <a class="link" href="/#proyectos">Proyectos</a>
-                <a class="link" href="/#sobre-mi">Sobre mi</a>
-                <a class="link" href="/#tecnologias">Tecnologías</a> 
+            <nav class="text-center flex flex-col justify-center gap-20 px-6 py-10 mx-auto text-2xl bg-[#eeebff]/10 backdrop-blur-3xl">
+                <a href="/#inicio" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Inicio</a>
+                <a href="/#proyectos" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Proyectos</a>
+                <a href="/#sobre-mi" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Sobre mi</a>
+                <a href="/#experiencia" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Experiencia</a> 
+                <a href="/#contactame" class="relative after:bg-blue-100/70 after:absolute after:h-0.5 after:w-0 after:-bottom-0.5 after:left-0 hover:after:w-full after:transition-all after:duration-100">Contactame</a> 
             </nav>
         </div>
         
     </header>
 </div>
 
--->

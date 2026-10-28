@@ -1,0 +1,44 @@
+---
+import LayoutComplements from '../../layouts/LayoutComplements.astro';
+import { Check, ArrowLeft, ArrowUpRight } from 'lucide-react';
+---
+
+<LayoutComplements
+    title="Página de agradecimiento - Portafolio de trabajo de David Hernández"
+    description='Portafolio web de trabajo de David Hernández, contrata David para crear tu sitio, app o plataforma web con tecnologias como HTML, CSS, JavaScript, Astro, React, IA entre otras más, con trabajo dedicado al detalle y visualmente atractivo, enfocado en conocer tu necesidad y visión de trabajo prpyectandola a tus clientes.'>   
+    
+    <main >
+        <section class="flex flex-col items-center text-blue-100/70 gap-5 justify-start px-10 py-20" >
+            <div class=" py-1.5 px-3 rounded-4xl bg-[#eeebff]/10 backdrop-blur-3xl border border-blue-100/70">
+                <p class="text-blue-300/80 font-bold">Acción completado</p>
+            </div>
+            <div class="p-6 rounded-full bg-[#eeebff]/10 backdrop-blur-3xl">
+                <Check size={100}></Check>
+            </div>
+            <h1 class="text-4xl md:text-6xl text-center font-semibold text-white">¡Correo recibido con éxito!</h1>
+            <p class="text-center text-lg w-full md:w-4/5 lg:w-1/2">He recibido tu información y me pondré en contacto contigo en breve para dar respuesta a tu mensaje o propuesta.</p>
+            
+            <article class="mt-10 bg-[#eeebff]/10 backdrop-blur-3xl p-8 rounded-2xl">
+                <div class="flex justify-between mb-5 md:gap-60">
+                    <span>Destinatario</span>
+                    <span class="font-semibold">David Hernández </span>
+                </div>
+                <hr class="border-white/70">
+                <div class="flex justify-between mt-5 md:gap-60 text-sm md:text-base">
+                    <span>Tiempo de respuesta</span>
+                    <span class="text-right text-blue-300/80 font-semibold"> 24-48 horas laborales </span>
+                </div>
+            </article>
+
+            <div class="mt-10 flex gap-y-5 gap-x-15 flex-wrap justify-center font-semibold">
+                <a class="hover:scale-105 flex gap-1 py-3 px-8 rounded-xl bg-white text-black" href="https://davidhernandezbrito.com"> <ArrowLeft></ArrowLeft> Volver a la página principal</a>
+                <a class="hover:scale-105 transition duration-150 ease-in-out flex gap-1 py-3 px-8 rounded-xl bg-[#eeebff]/10 backdrop-blur-3xl" href="https://www.linkedin.com/in/david-antonio-hern%C3%A1ndez-brito-213a951b8/">Conectar con LinkedIn <ArrowUpRight></ArrowUpRight> </a>
+            </div>
+                
+        </section>
+      
+
+    </main>
+
+</LayoutComplements>
+

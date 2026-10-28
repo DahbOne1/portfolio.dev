@@ -46,7 +46,7 @@ const currentLocale = Astro.currentLocale ?? "es";
       {
         languages.map((language) => (
           <a
-            href={`/${language.code}/`}
+            href={language.code === "es" ? "/" : `/${language.code}/`}
             lang={language.code}
             dir={language.direction}
             class:list={[

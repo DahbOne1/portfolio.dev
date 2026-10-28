@@ -1,0 +1,60 @@
+---
+import {Toast} from "../microkit/toast.jsx"
+
+---
+<article data-aos="fade-up" data-aos-duration="2000" class="text-white/70 pb-20">
+    
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-10">
+        <div class="w-full lg:w-4/12">  
+            <p class="pb-4 text-xl italic">Cuentame lo que necesitas para tu proyecto.</p>
+            <img class="w-full shadow-xl shadow-white/10 h-96 rounded-2xl object-cover object-center" src="../../img/developer/img_develop.webp" alt="Imagen de desarrollo de David Hernández mostrando código del Portafolio de trabajo.">
+        </div>
+        
+        <form action="https://formsubmit.co/c48b6bf1ab5421d0ff1c0079f9846b98" method="POST" class="w-full lg:w-8/12 p-8 rounded-2xl bg-[#eeebff]/10 backdrop-blur-3xl border border-white/10">
+            <article class="flex items-center justify-center gap-8">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="texto_nombre" id="texto_nombre" class="block py-2.5 px-0 w-full text-sm text-blue-100/70 bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder="" required maxlength="100" />
+                    <label for="texto_nombre" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Nombre Completo</label>
+                </div>
+            </article>
+             <article class="flex flex-wrap items-center justify-center gap-x-8">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="email" name="correo_electronico" id="correo_electronico" class="block py-2.5 px-0 w-full text-sm text-blue-100/70 bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " maxlength="60" />
+                    <label for="correo_electronico" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Correo Electrónico</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="numero_telefonico" id="numero_telefonico" class="block py-2.5 px-0 w-full text-sm text-blue-100/70 bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required size="10" />
+                    <label for="numero_telefonico" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Número Teléfonico</label>
+                </div>
+            </article>
+            <article class="flex flex-wrap items-center justify-center gap-x-8">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="nombre_marca" id="nombre_marca" class="block py-2.5 px-0 w-full text-sm text-blue-100/70 bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " maxlength="60" />
+                    <label for="nombre_marca" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Nombre de marca/empresa</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <select id="meta" name="meta" class="block py-2.5 px-0 w-full text-sm text-blue-100/70 bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-white peer">
+                        <option value="$5,000" selected>$5,000</option>
+                        <option value="$10,000">$10,000</option>
+                        <option value="$15,000">$15,000</option>
+                        <option value="$20,000">$20,000</option>
+                        <option value="No estoy seguro">No estoy seguro</option>
+                    </select>
+                    <label for="presupuesto" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Presupuesto del Proyecto</label>
+                </div>
+            </article>
+            <article class="pt-4">
+                <div class="relative z-0 w-full mb-5 group">
+                    <textarea rows="4" cols="50"  name="meta" id="meta" class="block p-2.5  w-full text-sm text-blue-100/70 bg-transparent border-b-2 border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-white/10 peer rounded-xl max-h-30 min-h-15" placeholder=" " maxlength="500" />
+                    <label for="meta" class="absolute text-sm duration-300 transform -translate-y-6 scale-75 top-0 -z-10 origin-left peer-focus:inset-s-0 peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Mesaje/Meta del Proyecto </label>
+                </div>
+            </article>
+            <input type="hidden" name="_next" value="../pages/es/gracias.asto">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" class="cursor-pointer text-white bg-blue-300/80  box-border border border-transparent hover:bg-blue-300  focus:ring-4 shadow-xs font-medium leading-5 rounded-xl text-sm px-4 py-2.5 focus:outline-none">Enviar</button>
+        </form>
+       
+    </div>
+
+</article>
+

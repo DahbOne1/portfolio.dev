@@ -1,0 +1,112 @@
+---
+
+const FRONT = [
+    {
+        name: "JavaScript",
+    },
+    {
+        name: "HTML",
+    },
+    {
+        name:"CSS",
+    },
+    {
+        name:"Tailwind",
+    },
+    {
+        name:"NodeJS",
+    },
+    {
+        name:"React",
+    },
+    {
+        name:"Astro",
+    }
+]
+
+const BACK = [
+    {
+        name: "Laravel",
+    },
+    {
+        name:"PHP",
+    },
+    {
+        name:"Java",
+    },
+     {
+        name:"MySQL",
+    },
+    {
+        name:"Firebase",
+    },
+]
+
+
+const DEVOPS = [
+    {
+        name: "GIT",
+    },
+    {
+        name: "GITHUB",
+
+    },
+]
+
+const MOBILE = [
+    {
+        name:"Flutter",
+    },
+    {
+        name:"Dart",
+    },
+    {
+        name:"JetPack Compose",
+    }
+]
+
+
+---
+<article data-aos="fade-up" data-aos-duration="2000"  class="flex flex-col-reverse lg:flex-row pb-16  justify-center items-center gap-y-15">
+    <div class="w-full lg:w-7/12 flex flex-col items-start gap-4 text-white/80 ">
+        <div data-aos="fade-in" data-aos-duration="3000" class="rounded-2xl py-2 pl-4 pr-10 border border-white/10 bg-blue-100/10 backdrop-blur-lg">
+            <h4 class="text-white mb-2">Front-end</h4>
+            {
+                FRONT.map((front) => (
+                    <span class="text-sm italic">/ {front.name} </span>
+                ))
+            }
+        </div>
+        <div data-aos="fade-in" data-aos-duration="3000" class="rounded-2xl py-2  pl-4 pr-10  border border-white/10 bg-blue-100/10 backdrop-blur-lg">
+            <h4 class="text-white mb-2">Back-end</h4>
+            {
+                BACK.map((back) => (
+                    <span class="text-sm italic">/ {back.name} </span>
+                ))
+            }
+        </div>
+        <div data-aos="fade-in" data-aos-duration="3000" class="rounded-2xl py-2  pl-4 pr-10  border border-white/10 bg-blue-100/10 backdrop-blur-lg">
+            <h4 class="text-white mb-2">Móvil</h4>
+             {
+                MOBILE.map((mobile) => (
+                    <span class="text-sm italic"> /  {mobile.name} </span>
+                ))
+            }
+        </div>
+        <div  data-aos="fade-in" data-aos-duration="3000" class="flex flex-wrap items-center">
+            <div class="inline rounded-2xl py-2  pl-4 pr-10 border border-white/10 bg-blue-100/10 backdrop-blur-lg">
+                <h4 class="text-white mb-2">DevOps</h4>
+                {
+                    DEVOPS.map((devop) => (
+                        <span class="text-sm italic">/ {devop.name} </span>
+                    ))
+                }
+            </div> 
+            <p class="py-5 md:py-0 md:flex-1 md:px-5 italic text-base lg:text-xs md:w-100">Estas son algunas de mis tecnologías favoritas y herramientas con las que además he trabajado.</p>
+        </div>
+        
+    </div>
+    <div  class="w-full lg:w-5/12">
+        <img data-aos="fade-in" data-aos-duration="4000" class="shadow-xl shadow-white/10 rounded-2xl w-full lg:w-10/12 h-100 object-cover " src="../../img/projects/img_work.webp" alt="">
+    </div>
+</article>

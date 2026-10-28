@@ -1,26 +1,26 @@
 
-name: Deploy - Production
+name: Deploy - Staging
 
 on:
   push:
     branches:
-      - main
+      - develop
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: deploy-production
+  group: deploy-staging
   cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Build and deploy production
+    name: Build and deploy staging
     runs-on: ubuntu-latest
     environment:
-      name: production
-      url: https://davidhernandezbrito.com/
+      name: staging
+      url: https://staging.davidhernandezbrito.com/
 
     steps:
       - name: Checkout repository
@@ -41,8 +41,8 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Deploy to Hostinger production
-        uses: SamKirkland/FTP-Deploy-Action@v4.7.0
+      - name: Deploy to Hostinger staging
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}

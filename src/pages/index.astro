@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/sections/Projects.astro";
+import AboutMe from "../components/sections/AboutMe.astro";
+import Hero from '../components/sections/Hero.astro';
+import Technologies from '@/components/sections/Technologies.astro';
+import Title from '@/components/components/Title.astro';
+import Experience from '@/components/sections/Experience.astro';
+import ContactMe  from '@/components/sections/ContactMe.astro';
+---
+
+<Layout 
+  title="Portafolio de trabajo de David Hernández - Desarrollador y Programador con 3 años de experiencia como desarrollador de software independiente."
+  description="Portafolio web de trabajo de David Hernández, contrata David para crear tu sitio, app o plataforma web con tecnologias como HTML, CSS, JavaScript, Astro, React, IA entre otras más, con trabajo dedicado al detalle y visualmente atractivo, enfocado en conocer tu necesidad y visión de trabajo prpyectandola a tus clientes.">
+	<main class="">
+		<SectionContainer id="inicio" class="py-28">
+			<Hero></Hero>
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<Title>Proyectos</Title>
+			<Projects>
+			</Projects>
+			
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi">
+			<Title>Sobre mi</Title>
+			<AboutMe>
+			</AboutMe>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<Title>Experiencia</Title>
+			<Experience>
+			</Experience>
+		</SectionContainer>
+
+		<SectionContainer id="tecnologias" class="mt-20">
+			<Title>Stack Tecnológico</Title>
+			<Technologies></Technologies>
+		</SectionContainer>
+
+
+<!-- 		<SectionContainer id="proceso-conmigo">
+			<Title>Mi Forma de Trabajar</Title>
+			<ProccesWithMe></ProccesWithMe>
+		</SectionContainer>-->
+
+		<SectionContainer id="contactame" class="mt-20">
+			<Title>Contactame</Title>
+			<ContactMe></ContactMe>
+		</SectionContainer>
+	</main>
+	
+</Layout>
+

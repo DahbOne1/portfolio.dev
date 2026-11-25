@@ -40,7 +40,14 @@ const { description, title } = Astro.props;
 					observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 				}
 		</script>
+			<script is:inline  async src="https://www.googletagmanager.com/gtm.js?id=GTM-PVLJ9SNH"></script>
+		<script async>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+		</script>
 	</head>
+
 	<body>
 		<div class="fixed left-0 top-0 -z-10 h-full w-full">
 			<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
